@@ -33,6 +33,19 @@
   },
   "name": "changelog-gitlab",
   "author": "Marcin Sirocki",
+  "description": "Gitlab plugin for atlassian/changesets",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frontowiec/changelog-gitlab"
+  },
+  "keywords": [
+    "gitlab",
+    "changeset",
+    "changelog"
+  ],
+  "bugs": {
+    "url": "https://github.com/frontowiec/changelog-gitlab/issues"
+  },
   "module": "dist/changelog-gitlab.esm.js",
   "size-limit": [
     {
