@@ -38,7 +38,7 @@ const getReleaseLine = async (
   };
 
   if (!commitSha) {
-    throw Error('Skomituj swojego changeseta przed wydaniem wersji');
+    throw Error('Commit changesets before release new version');
   }
 
   try {
@@ -106,4 +106,4 @@ const defaultChangelogFunctions = {
   getDependencyReleaseLine,
 };
 
-module.exports = defaultChangelogFunctions;
+export default defaultChangelogFunctions;
