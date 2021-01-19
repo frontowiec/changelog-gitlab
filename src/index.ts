@@ -19,6 +19,13 @@ const _findIssues = (string: string) => {
   return string.match(test) || [];
 };
 
+function _flatMap<T, U>(
+  array: T[],
+  callbackfn: (value: T, index: number, array: T[]) => U[]
+): U[] {
+  return Array<U>().concat(...array.map(callbackfn));
+}
+
 const getReleaseLine = async (
   changeset: NewChangesetWithCommit,
   _type: VersionType
@@ -62,7 +69,7 @@ const getReleaseLine = async (
         mergeRequest.iid
       )) as any[];
       const messages = commits.map((commit) => commit.message);
-      const issuesFromCommits = messages.flatMap((message) =>
+      const issuesFromCommits = _flatMap(messages, (message) =>
         _findIssues(message).filter((value) => !!value)
       );
       issuesFromCommits.forEach((issue) => issues.add(issue));
